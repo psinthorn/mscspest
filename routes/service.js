@@ -1,5 +1,5 @@
 const ServiceController = require("./../controllers/admin/serviceController");
-const ServiceGalleryController = require("./../controllers/admin/ServiceGalleryController");
+// const ServiceGalleryController = require("./../controllers/admin/ServiceGalleryController");
 const PriceSaleController = require("./../controllers/admin/priceController");
 const { ensureAuthenticated, ensureGuest } = require("./../helpers/auth");
 
@@ -82,22 +82,22 @@ module.exports = app => {
     ServiceController.imageBannerUpdate
   );
 
-  //Gallery section
-  app.get(
-    "/admin/service/gallery/:id",
-    ensureAuthenticated,
-    ServiceGalleryController.gallery
-  );
-  app.post(
-    "/admin/service/gallery/:id",
-    ensureAuthenticated,
-    ServiceGalleryController.galleryUpload
-  );
-  app.delete(
-    "/admin/service/gallery/:id",
-    ensureAuthenticated,
-    ServiceGalleryController.delete
-  );
+  // //Gallery section
+  // app.get(
+  //   "/admin/service/gallery/:id",
+  //   ensureAuthenticated,
+  //   ServiceGalleryController.gallery
+  // );
+  // app.post(
+  //   "/admin/service/gallery/:id",
+  //   ensureAuthenticated,
+  //   ServiceGalleryController.galleryUpload
+  // );
+  // app.delete(
+  //   "/admin/service/gallery/:id",
+  //   ensureAuthenticated,
+  //   ServiceGalleryController.delete
+  // );
 
   //Included
   app.post(
