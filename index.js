@@ -1,7 +1,7 @@
-const app = require('./app');
+const app = require("./app");
 
-const port = process.env.PORT || 8082;
+const PORT = process.env.PORT || 8082;
 
-app.listen(port, () => {
-    console.log(`Server started on ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server started on ${PORT}`);
 });
