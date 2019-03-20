@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const flash = require("connect-flash");
-const Service = require("./../../models/Service");
+const Service = require("../../models/Service");
 const fs = require("fs");
 
 module.exports = {
@@ -83,13 +83,13 @@ module.exports = {
 
     fs.unlink(delImage, err => {
       Service.findOne({ "gallery._id": id })
-      .then(service => {
-        service.gallery.pull({ _id: id });
-        service.save().then(service => {
-          req.flash("error_msg", "Image is deleted");
-          res.redirect(`/admin/service/${service.id}`);
+        .then(service => {
+          service.gallery.pull({ _id: id });
+          service.save().then(service => {
+            req.flash("error_msg", "Image is deleted");
+            res.redirect(`/admin/service/${service.id}`);
+          });
         });
-      });
     });
   }
 };
